@@ -1,0 +1,122 @@
+###Membuat users baru 
+###CONTOH 1
+POST http://localhost:4000/api/v1/users
+Content-Type: application/json
+
+{
+  "name": "Rini Susanti",
+  "email": "rinisusanti@gmail.com",
+  "password": "rini3456",
+  "profile": {
+    "identity_type": "SIM",
+    "identity_number": "3278123456123456",
+    "address": "Jl. Mangga No. 67, Medan"
+  }
+}
+
+###CONTOH 2
+POST http://localhost:4000/api/v1/users
+Content-Type: application/json
+
+{
+  "name": "Ratna Puspita",
+  "email": "ratnapuspita@gmail.com",
+  "password": "ratna5678",
+  "profile": {
+    "identity_type": "KTP",
+    "identity_number": "3576123409120002",
+    "address": "Jl. Kembang No. 45, Bali"
+  }
+}
+
+
+###CONTOH3
+POST http://localhost:4000/api/v1/users
+Content-Type: application/json
+
+{
+  "name": "Ilham Saputra",
+  "email": "ilhamsaputra@gmail.com",
+  "password": "ilham123",
+  "profile": {
+    "identity_type": "KTP",
+    "identity_number": "3576109785123001",
+    "address": "Jl. Delima No. 67, Bandar Lampung"
+  }
+}
+
+###Menampilan seluruh data users
+GET http://localhost:4000/api/v1/users
+
+###menampilan data users berdasarkan id
+GET http://localhost:4000/api/v1/users/1
+
+
+###membuat account baru
+###contoh1
+POST http://localhost:4000/api/v1/accounts
+Content-Type: application/json
+
+{
+  "user_id": 1,
+  "bank_name": "Bank A",
+  "bank_account_number": "1234567890",
+  "balance": 10000
+}
+###contoh 2
+POST http://localhost:4000/api/v1/accounts
+Content-Type: application/json
+
+{
+  "user_id": 2,
+  "bank_name": "Bank B",
+  "bank_account_number": "9876543210",
+  "balance": 20000
+}
+
+###contoh 3
+POST http://localhost:4000/api/v1/accounts
+Content-Type: application/json
+
+{
+  "user_id": 3,
+  "bank_name" : "Bank BRI",
+  "bank_account_number" : "4354272667",
+  "ballance" : 100000
+}
+
+###menampilan data account
+GET http://localhost:4000/api/v1/accounts
+
+
+###menampilan data account berdasarkan id
+GET http://localhost:4000/api/v1/accounts/1
+
+
+###membuat data transaksi
+###contoh 1
+POST http://localhost:4000/api/v1/transactions
+Content-Type: application/json
+
+{
+  "source_account_id": 1,
+  "destination_account_id": 3,
+  "amount": 50000
+}
+
+###contoh 2
+POST http://localhost:4000/api/v1/transactions
+Content-Type: application/json
+
+{
+  "source_account_id": 2,
+  "destination_account_id": 4,
+  "amount": 10000
+}
+
+###menampilkan data transaksi
+GET http://localhost:4000/api/v1/transactions
+
+###menampilkan data transaksi berdasarkan id
+GET http://localhost:4000/api/v1/transactions/1
+
